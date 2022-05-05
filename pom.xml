@@ -15,7 +15,7 @@
     </parent>
     <groupId>guru.springframework</groupId>
     <artifactId>sfg-pet-clinic</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.2</version>
     <name>sfg-pet-clinic</name>
     <description>SFG Pet Clinic Project</description>
 
@@ -24,9 +24,6 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>11</java.version>
     </properties>
-
-    <dependencies>
-    </dependencies>
 
     <build>
         <plugins>
@@ -58,4 +55,10 @@
         <connection>scm:git:https://github.com/Igorgorb/sfg-pet-clinic.git</connection>
     </scm>
 
+    <scm>
+        <!--        <developerConnection>scm:git:https://github.com/Igorgorb/sfg-pet-clinic.git</developerConnection>-->
+        <url>https://github.com/Igorgorb/sfg-pet-clinic</url>
+        <connection>scm:git:https://github.com/Igorgorb/sfg-pet-clinic.git</connection>
+        <tag>sfg-pet-clinic-0.0.3</tag>
+    </scm>
 </project>
