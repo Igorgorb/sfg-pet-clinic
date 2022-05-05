@@ -54,6 +54,5 @@
         <!--        <developerConnection>scm:git:https://github.com/Igorgorb/sfg-pet-clinic.git</developerConnection>-->
         <url>https://github.com/Igorgorb/sfg-pet-clinic</url>
         <connection>scm:git:https://github.com/Igorgorb/sfg-pet-clinic.git</connection>
-        <tag>sfg-pet-clinic-0.0.2</tag>
     </scm>
 </project>
