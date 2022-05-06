@@ -1,4 +1,4 @@
-package guru.springframework.model;
+package guru.springframework.sfgpetclinic.model;
 
 /**
  * @author igorg
