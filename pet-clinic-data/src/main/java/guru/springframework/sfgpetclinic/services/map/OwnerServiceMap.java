@@ -2,6 +2,7 @@ package guru.springframework.sfgpetclinic.services.map;
 
 import guru.springframework.sfgpetclinic.model.Owner;
 import guru.springframework.sfgpetclinic.services.OwnerService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
@@ -9,6 +10,7 @@ import java.util.Set;
  * @author igorg
  * Date 07.05.2022
  */
+@Service
 public class OwnerServiceMap extends AbstarctMapService<Owner, Long> implements OwnerService {
     @Override
     public Set<Owner> findAll() {
