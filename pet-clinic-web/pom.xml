@@ -39,6 +39,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.projectlombok</groupId>-->
+<!--            <artifactId>lombok</artifactId>-->
+<!--            <optional>true</optional>-->
+<!--        </dependency>-->
 
         <!-- webjars -->
         <dependency>
@@ -62,12 +67,12 @@
         </dependency>
         <!-- end of webjars -->
 
-<!--        &lt;!&ndash; https://mvnrepository.com/artifact/ro.isdc.wro4j/wro4j-maven-plugin &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>ro.isdc.wro4j</groupId>-->
-<!--            <artifactId>wro4j-maven-plugin</artifactId>-->
-<!--            <version>1.10.0</version>-->
-<!--        </dependency>-->
+        <!--        &lt;!&ndash; https://mvnrepository.com/artifact/ro.isdc.wro4j/wro4j-maven-plugin &ndash;&gt;-->
+        <!--        <dependency>-->
+        <!--            <groupId>ro.isdc.wro4j</groupId>-->
+        <!--            <artifactId>wro4j-maven-plugin</artifactId>-->
+        <!--            <version>1.10.0</version>-->
+        <!--        </dependency>-->
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -98,7 +103,8 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <wroManagerFactory>ro.isdc.wro.maven.plugin.manager.factory.ConfigurableWroManagerFactory</wroManagerFactory>
+                    <wroManagerFactory>ro.isdc.wro.maven.plugin.manager.factory.ConfigurableWroManagerFactory
+                    </wroManagerFactory>
                     <cssDestinationFolder>${project.build.directory}/classes/static/resources/css</cssDestinationFolder>
                     <wroFile>${basedir}/src/main/wro/wro.xml</wroFile>
                     <extraConfigFile>${basedir}/src/main/wro/wro.properties</extraConfigFile>
