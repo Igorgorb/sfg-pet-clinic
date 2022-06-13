@@ -1,7 +1,7 @@
 # sfg-pet-clinic
 
 SFG Pet Clinic
-[![CircleCI](https://circleci.com/gh/Igorgorb/sfg-pet-clinic/tree/main.svg?style=svg)](https://circleci.com/gh/Igorgorb/sfg-pet-clinic/tree/main)
+[![CircleCI](https://circleci.com/gh/Igorgorb/sfg-pet-clinic/tree/main.svg?style=svg&circle-token=b9681c35ab0fc7a3256acde24dac09f4aa253eab)](https://circleci.com/gh/Igorgorb/sfg-pet-clinic/tree/main)
 
 ## Compiling the CSS
 
