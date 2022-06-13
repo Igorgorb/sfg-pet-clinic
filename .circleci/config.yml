@@ -18,7 +18,7 @@ jobs:
             - v1-dependencies-{{ checksum "pom.xml" }}
             - v1-dependencies-
 
-      - rum: mvn install -DskipTests
+      - run: mvn install -DskipTests
 
       - run: mvn dependency:go-offline
 
