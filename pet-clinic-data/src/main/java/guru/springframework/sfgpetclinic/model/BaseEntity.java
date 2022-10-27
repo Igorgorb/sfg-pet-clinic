@@ -12,8 +12,8 @@ import javax.persistence.MappedSuperclass;
 import java.io.Serializable;
 
 /**
- * @author igorg
- * Date 06.05.2022
+ * @author igorg 
+ * @date 06.05.2022
  */
 @Getter
 @Setter
@@ -22,7 +22,11 @@ import java.io.Serializable;
 @MappedSuperclass
 public class BaseEntity implements Serializable {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
+
+  public boolean isNew() {
+    return this.id == null;
+  }
 }
