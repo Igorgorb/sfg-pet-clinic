@@ -19,7 +19,7 @@ import javax.persistence.Table;
 public class PetType extends BaseEntity {
 
   @Builder
-  public PetType(String name, Long id) {
+  public PetType(Long id, String name) {
     super(id);
     this.name = name;
   }
