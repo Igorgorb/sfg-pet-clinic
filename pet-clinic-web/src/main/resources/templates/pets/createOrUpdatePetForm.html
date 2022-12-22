@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org"
+      th:replace="~{fragments/layout :: layout (~{::body},'owners')}">
+  <head>
+    <link rel="stylesheet" href="../../static/resources/css/petclinic.css" th:href="@{/resources/css/petclinic.css}"/>
+  </head>
+
+  <body>
+    <link rel="stylesheet" href="../../static/resources/css/petclinic.css" th:href="@{/resources/css/petclinic.css}"/>
+    <h2><th:block th:if=${pet['new']}>New </th:block>Pet</h2>
+    <form th:object="${pet}" class="form-horizontal" method="post">
+      <input type="hidden" name="id" th:value="*{id}" />
+      <div class="form-floating has-feedback">
+        <div class="mb-3">
+          <label class="form-label" for="ownerNameSpanId">Owner</label>
+          <span class="form-control-plaintext" id="ownerNameSpanId" 
+                th:text="${pet.owner?.firstName + ' ' + pet.owner?.lastName}">
+            Pet owner's FIO
+          </span>          
+        </div>
+        <input
+          th:replace="~{fragments/inputField :: input ('Name', 'name', 'text')}" />
+        <input
+          th:replace="~{fragments/inputField :: input ('Birth Date', 'birthDate', 'date')}" />
+        <input
+          th:replace="~{fragments/selectField :: select ('Type', 'petType', ${types})}" />
+      </div>
+    <div class="form-floating">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button
+          th:with="text=${pet['new']} ? 'Add Pet' : 'Update Pet'"
+          class="btn btn-default" type="submit" th:text="${text}">Add
+          Pet</button>
+      </div>
+    </div>
+    </form>
+  </body>
+</html>
