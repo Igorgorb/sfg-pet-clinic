@@ -25,7 +25,7 @@ public class Owner extends Person {
     this.address = address;
     this.city = city;
     this.telephone = telephone;
-    
+
     if (pets != null) {
       this.pets = pets;
     }
@@ -39,6 +39,11 @@ public class Owner extends Person {
   private String telephone;
   @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
   private Set<Pet> pets = new HashSet<>();
+
+  public void addPet(Pet pet) {
+    pets.add(pet);
+    pet.setOwner(this);
+  }
 
   /**
    * Return the Pet with the given name, or null if none found for this Owner.
