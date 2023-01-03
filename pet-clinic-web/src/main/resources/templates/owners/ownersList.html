@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
-<html xmlns:th="https://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'owners')}">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'owners')}">
 
   <body>
 
@@ -25,7 +26,7 @@
           <td th:text="${owner.address}"/>
           <td th:text="${owner.city}"/>
           <td th:text="${owner.telephone}"/>
-<!--          <td><span th:text="${#strings.listJoin(owner.pets, ', ')}"/></td>-->
+          <!--          <td><span th:text="${#strings.listJoin(owner.pets, ', ')}"/></td>-->
           <td><span th:each="pet : ${owner.pets}" th:text="${pet.name}" /></td>
         </tr>
       </tbody>

@@ -1,30 +1,33 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'vets')}">
-<head>
+<html lang="en" 
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" 
+      th:replace="~{fragments/layout :: layout (~{::body},'vets')}">
+  <head>
     <meta charset="UTF-8">
-    <title>List of vets</title>
-</head>
-<body>
-<!--say to Themleaf type of owner object -->
-<!--/*@thymesVar id="owner" type="guru.springframework.sfgpetclinic.model.Owner"*/-->
+      <title>List of vets</title>
+  </head>
+  <body>
+    <!--say to Themleaf type of owner object -->
+    <!--/*@thymesVar id="owner" type="guru.springframework.sfgpetclinic.model.Owner"*/-->
     <h1 th:text="'List of Vets'">List of Vets...</h1>
 
     <table class="table table-striped">
-        <thead>
+      <thead>
         <tr>
-            <th>Id</th>
-            <th>First Name</th>
-            <th>Last Name</th>
+          <th>Id</th>
+          <th>First Name</th>
+          <th>Last Name</th>
         </tr>
-        </thead>
-        <tbody>
+      </thead>
+      <tbody>
         <tr th:each="vet : ${vets}">
-            <!--        sumbol "?" - say Thymeleaf attention for may be Null in value -->
-            <td th:text="${vet?.id}">1</td>
-            <td th:text="${vet?.firstName}">Joe</td>
-            <td th:text="${vet?.lastName}">Buck</td>
+          <!--        sumbol "?" - say Thymeleaf attention for may be Null in value -->
+          <td th:text="${vet?.id}">1</td>
+          <td th:text="${vet?.firstName}">Joe</td>
+          <td th:text="${vet?.lastName}">Buck</td>
         </tr>
-        </tbody>
+      </tbody>
     </table>
-</body>
+  </body>
 </html>
