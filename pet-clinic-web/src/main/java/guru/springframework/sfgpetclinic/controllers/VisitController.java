@@ -3,11 +3,10 @@ package guru.springframework.sfgpetclinic.controllers;
 import guru.springframework.sfgpetclinic.model.Owner;
 import guru.springframework.sfgpetclinic.model.Pet;
 import guru.springframework.sfgpetclinic.model.Visit;
-import guru.springframework.sfgpetclinic.repositories.OwnerRepository;
-import guru.springframework.sfgpetclinic.services.OwnerService;
 import guru.springframework.sfgpetclinic.services.PetService;
 import guru.springframework.sfgpetclinic.services.VisitService;
-import java.util.Map;
+import java.beans.PropertyEditorSupport;
+import java.time.LocalDate;
 import javax.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -39,6 +38,13 @@ public class VisitController {
   @InitBinder
   public void setAllowedFields(WebDataBinder dataBinder) {
     dataBinder.setDisallowedFields("id");
+
+    dataBinder.registerCustomEditor(LocalDate.class, new PropertyEditorSupport() {
+      @Override
+      public void setAsText(String text) throws IllegalArgumentException {
+        setValue(LocalDate.parse(text));
+      }
+    });
   }
 
   /**
@@ -72,14 +78,13 @@ public class VisitController {
   // Spring MVC calls method loadPetWithVisit(...) before processNewVisitForm is
   // called
   @PostMapping("/owners/{ownerId}/pets/{petId}/visits/new")
-  public String processNewVisitForm(@ModelAttribute Owner owner, @PathVariable Long petId, @Valid Visit visit,
-    BindingResult result) {
+  public String processNewVisitForm(@Valid Visit visit, BindingResult result) {
     if (result.hasErrors()) {
       return "pets/createOrUpdateVisitForm";
     }
 
 //    owner.addVisit(petId, visit);
     visitService.save(visit);
-    return "redirect:/owners/" + owner.getId();
+    return "redirect:/owners/{ownerId}";
   }
 }
