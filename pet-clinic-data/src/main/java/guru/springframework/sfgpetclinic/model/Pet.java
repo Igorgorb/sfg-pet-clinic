@@ -6,6 +6,7 @@ import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
+import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  * @author igorg Date 02.05.2022
@@ -28,6 +29,7 @@ public class Pet extends BaseEntity {
   @JoinColumn(name = "owner_id")
   private Owner owner;
   @Column(name = "birth_date")
+  @DateTimeFormat(pattern = "yyyy-MM-dd")
   private LocalDate birthDate;
 
   @OneToMany(cascade = CascadeType.ALL, mappedBy = "pet")
